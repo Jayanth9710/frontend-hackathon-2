@@ -3,15 +3,19 @@ import axios from "axios";
 import "./App.css";
 import env from "./settings"
 
+
 function AmazonData(props) {
   const [list, setList] = useState([]);
+  const [isLoading, setLoading] = useState(true);
   useEffect(() => {
     let fetchData = async () => {
       try {
         let products = await axios.get(`${env.api}/amzn`);
         setList([...products.data]);
+        setLoading(false)
       } catch (error) {
         console.log(error);
+        setLoading(false)
       }
     };
     fetchData();
@@ -26,6 +30,12 @@ function AmazonData(props) {
         </div>
 
         <div className="row">
+          { isLoading ? <div class="spinner">
+ <div class="rect1"></div>
+  <div class="rect2"></div>
+  <div class="rect3"></div>
+  <div class="rect4"></div>
+</div> :
           <div className="productList">
           {list.map((obj) => {
             return (
@@ -61,8 +71,11 @@ function AmazonData(props) {
             
           })}
           </div>
+        }
         </div>
+        
       </div>
+    
     </>
   );
 }
