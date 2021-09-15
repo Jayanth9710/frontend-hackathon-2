@@ -1,7 +1,7 @@
 let getSettings = () => {
     return {
         // api : "http://localhost:3000"
-        api : "https://b25gnode.herokuapp.com"
+        api : "https://hackathon-backend-2.herokuapp.com"
     }
 }
 

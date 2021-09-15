@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
+import env from "./settings"
 
 function FlipkartData(props) {
   const [list, setList] = useState([]);
   useEffect(() => {
     let fetchData = async () => {
       try {
-        let products = await axios.get("http://localhost:4000/flip");
+        let products = await axios.get(`${env.api}/flip`);
         setList([...products.data]);
       } catch (error) {
         console.log(error);
