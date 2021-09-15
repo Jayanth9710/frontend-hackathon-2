@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@1,500&display=swap');
+
 .App {
   text-align: center;
 }
@@ -34,5 +36,93 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+.container-fluid{
+  position: relative;
+}
+.title{
+  position: absolute;
+  z-index: 1;
+  margin-top: 450px;
+margin-left: 400px;
+    font-size: 30px;
+    color: rgb(240, 236, 241);
+    font-family: 'Work Sans', sans-serif;
+}
+
+.card-img-top-flipkart{
+  height: 200px;
+  width: 180px;
+  
+}
+.card-img-top{
+  height: 180px;
+  width: 180px;
+  
+}
+.iphone{
+  height: 90%;
+  width: 100%;
+}
+.nav-link{
+  background-color: rgb(238, 221, 221) !important;
+}
+.nav-link:hover{
+  background-color: #a1a2a5 !important;
+}
+.card{
+  display: flex;
+  flex-direction: row;
+  width:400px !important;
+  gap: 15px;
+  margin-bottom: 8px;
+  border-radius: 16px;
+ 
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+/* Styling according to device widths using Media Query*/
+@media (min-width:1200px) and (max-width:1600px){
+  .productList{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:25px;
+  }
+}
+
+@media (min-width:900px) and (max-width:1200px){
+  .productList{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:20px;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 900px){
+.productList  {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:10px;
+  width:300px;
+  justify-content:center;
+  
+}
+}
+
+@media (min-width:1600px) and (max-width: 2000px) {
+  .productList{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap:15px;
+    padding-left:50px;
+  }
+}
+
+@media (min-width:2001px) {
+  .productList{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap:12px;
+     padding-left:50px;
   }
 }

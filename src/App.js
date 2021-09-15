@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+import AmazonData from'./Amazon'
+import Navbar from './Navbar'
+import HomePage from './homePage';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
+import FlipkartData from './Flipkart';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <Router>
+     <div id="wrapper">
+       <div id="content-wrapper" className="d-flex flex-column">
+         <div id="content">
+           <Navbar/>
+           <Switch>
+             <Route path="/" component={HomePage} exact={true}/>
+             <Route path="/amzn" component={AmazonData} exact={true}/>
+             <Route path="/flip" component={FlipkartData} exact={true}/>
+           </Switch>
+         </div>
+       </div>
+     </div>
+   </Router>
   );
 }
 
